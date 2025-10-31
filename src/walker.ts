@@ -71,7 +71,7 @@ const presAttrs = (
 };
 
 const skippedUseAttrs = ["id"];
-const allwaysPassedUseAttrs = [
+const alwaysPassedUseAttrs = [
   "x",
   "y",
   "width",
@@ -104,7 +104,7 @@ const getDefElWithCorrectAttrs = (defEl: Element, useEl: Element): Element => {
     // Does defEl have the attr? If so, use it, else use the useEl attr
     if (
       !defEl.hasAttribute(attr.name) ||
-      allwaysPassedUseAttrs.includes(attr.name)
+      alwaysPassedUseAttrs.includes(attr.name)
     ) {
       el.setAttribute(attr.name, useEl.getAttribute(attr.name) || "");
     }
