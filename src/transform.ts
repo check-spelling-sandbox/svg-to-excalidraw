@@ -116,7 +116,7 @@ const svgTransformToCSSTransform = (svgTransformStr: string): string => {
   });
 
   // Generate a string of transform functions that can be set as a CSS Transform.
-  const csstransformStr = tFuncValues
+  const cssTransformStr = tFuncValues
     .map(({ type, values }) => {
       const valStr = values
         .map(({ unit, value }) => `${value}${unit}`)
@@ -125,7 +125,7 @@ const svgTransformToCSSTransform = (svgTransformStr: string): string => {
     })
     .join(" ");
 
-  return csstransformStr;
+  return cssTransformStr;
 };
 
 export const createDOMMatrixFromSVGStr = (
