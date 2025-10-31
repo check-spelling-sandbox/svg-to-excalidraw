@@ -3,7 +3,7 @@ import { vec3, mat4 } from "gl-matrix";
 
 /*
 SVG transform attr is a bit strange in that it can accept traditional
-css transform string (at least per spec) as well as a it's own "unitless"
+css transform string (at least per spec) as well as its own "unitless"
 version of transform functions.
 
 https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
@@ -116,7 +116,7 @@ const svgTransformToCSSTransform = (svgTransformStr: string): string => {
   });
 
   // Generate a string of transform functions that can be set as a CSS Transform.
-  const csstransformStr = tFuncValues
+  const cssTransformStr = tFuncValues
     .map(({ type, values }) => {
       const valStr = values
         .map(({ unit, value }) => `${value}${unit}`)
@@ -125,7 +125,7 @@ const svgTransformToCSSTransform = (svgTransformStr: string): string => {
     })
     .join(" ");
 
-  return csstransformStr;
+  return cssTransformStr;
 };
 
 export const createDOMMatrixFromSVGStr = (
